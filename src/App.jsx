@@ -13,20 +13,23 @@ export function App() {
       <div>
         <Header />
         <div className={styles.wrapper}>
-          <Sidebar />
+          <Sidebar 
+            name = "Matheus Vinagre"
+            occupation = "Web Developer"
+            perfil = "https://github.com/SpaidiiPlayer.png"
+          />
           <main>
             <Post 
-              imagem="https://www.lance.com.br/galerias/wp-content/uploads/2021/03/gabigol-cassino-memes-1.jpg"
+              perfil="https://github.com/lukeeplr.png"
               author="Gabigol" 
-              content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa facere consequatur perferendis ratione praesentium, quasi labore repellendus libero accusantium ducimus quo reiciendis error sit ut dolore quos quibusdam vel officia!" 
+              content={`tirei foto de todos os trabalhos de complicadores pra caso ele perdesse eu ter como provar q fiz\ne realmente conseguir provar\ncomo é bom estar preparado😃`}
             />
             <Post 
-              imagem="https://conteudo.imguol.com.br/c/tab/56/2019/11/08/ilustracoes-publicadas-no-twitter-com-traco-de-anime-com-as-figuras-de-lula-e-jair-bolsonaro-1573251277503_v2_4x3.jpg"
+              perfil="https://github.com/Luciano-Citroni.png"
               author="LulaNaro" 
-              content="Presidentes Brasileiros versão mangá" 
+              content={`Queria agradecer a todos que mandaram mensagens.\nFiquei muito feliz no meu aniversário.\nValeu de coração ❤️`} 
             />
           </main>
-
         </div>
           
         

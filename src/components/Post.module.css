@@ -69,6 +69,15 @@ time{
     margin-top: 1.5rem;
 }
 
+.content pre{
+    font-family: "roboto";
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-300);
+    margin-top: 1.5rem;
+}
+
+
 .content a{
     text-decoration: none;
     font-weight: bold;
@@ -141,4 +150,8 @@ time{
 .commentForm .botao{
     visibility: hidden;
     max-height: 0;
+}
+
+.commentList {
+    margin-top: 2rem;
 }
