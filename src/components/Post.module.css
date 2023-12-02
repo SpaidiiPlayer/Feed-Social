@@ -1,7 +1,7 @@
 .post{
     
     background: var(--gray-800);
-    padding: 2.8125rem;
+    padding: 2.8125rem 2.8125rem 1.6rem;
     border-radius: 8px;
 }
 
@@ -63,6 +63,7 @@ time{
 
 
 .content {
+    font-size: 1rem;
     line-height: 1.6;
     color: var(--gray-300);
     margin-top: 1.5rem;
@@ -80,14 +81,64 @@ time{
 
 }
 
-.post footer .commentForm{
-    width: 100%;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border: 1px solid var(--gray-600);
+
+.post footer{
+    padding: 0;
 }
 
-.post footer .commentForm > strong {
+.commentForm{
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.post footer strong {
+    display: block;
+    text-align: left;
     line-height: 1.6;
     color: var(--gray-100);
+}
+
+.commentForm textarea {
+    margin-top: 1rem;
+    width: 100%;
+    background: var(--gray-900);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 0.82rem 1rem;
+    line-height: 1.4;
+    font-size: 0.875rem;
+    color: var(--gray-300);
+}
+
+
+
+.commentForm button[type="submit"]{
+    display: flex;
+    padding: 1rem 1.5rem;
+    color: var(--white);
+    background: var(--green-500);
+    border-radius: 8px;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+
+
+    transition: background 0.25s;
+}
+
+.commentForm button[type="submit"]:hover {
+    background: var(--green-300);
+}
+
+
+
+.commentForm:focus-within .botao{
+    visibility: visible;
+    max-height: none;
+}
+
+.commentForm .botao{
+    visibility: hidden;
+    max-height: 0;
 }

@@ -30,12 +30,14 @@ export function Post(props) {
             </div>
 
             <footer>
-                
                 <form className={style.commentForm}>
                     <strong>Deixe seu feedback</strong>
                     <textarea  placeholder="Deixe seu comentário" />
 
-                    <button type="submit">Comentar</button>
+                    <div className={style.botao}>
+                        <button type="submit">Comentar</button>
+                    </div>
+                    
                 </form>
             </footer>
 
