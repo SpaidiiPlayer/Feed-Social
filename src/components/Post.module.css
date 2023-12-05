@@ -3,6 +3,7 @@
     background: var(--gray-800);
     padding: 2.8125rem 2.8125rem 1.6rem;
     border-radius: 8px;
+    width: 100%;
 }
 
 .post + .post {
@@ -41,24 +42,12 @@
 .authorinfo span{
     color: var(--gray-400);
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
-time{
+article > header > time{
     text-align: right;
     justify-content: right;
-}
-
-.avatar {
-    box-sizing: initial;
-
-    height: 3rem;
-    width: 3rem;
-
-
-    border-radius: 8px;
-    border: 4px solid var(--gray-800);
-    outline: 2px solid var(--green-500);
 }
 
 
@@ -91,8 +80,9 @@ time{
 }
 
 
-.post footer{
-    padding: 0;
+.post > footer{
+    border-top: 1px solid var(--gray-600);
+    margin-top: 1.5rem;
 }
 
 .commentForm{

@@ -1,12 +1,13 @@
 import style from './Post.module.css';
 import { Comment } from './Comment';
+import { Avatar } from './Avatar';
 
 export function Post(props) {
     return (
         <article className={style.post}>
             <header>
                 <div className={style.author}>
-                    <img className={style.avatar} src={props.perfil} alt="" />
+                    <Avatar border={true} perfil={props.perfil}/>
 
                     <div className={style.authorinfo}> 
                         <strong>{props.author}</strong>
@@ -35,7 +36,12 @@ export function Post(props) {
             </footer>
 
             <div className={style.commentList}>
-                <Comment />
+                <Comment comment = 'Show de bola'
+                         perfil = 'https://github.com/lukeeplr.png'/>
+                <Comment comment = 'Parabéns!'
+                         perfil = 'https://github.com/lukeeplr.png'/>
+                <Comment comment = 'Obrigado pela dica, vou começar a salvar os meus também! Um forte abraço!'
+                         perfil = 'https://github.com/lukeeplr.png'/>
             </div>
         </article>
     )

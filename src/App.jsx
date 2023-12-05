@@ -10,7 +10,7 @@ import './global.css'
 
 export function App() {
   return (
-      <div>
+      <>
         <Header />
         <div className={styles.wrapper}>
           <Sidebar 
@@ -33,7 +33,7 @@ export function App() {
         </div>
           
         
-      </div>
+      </>
     )
       
 }

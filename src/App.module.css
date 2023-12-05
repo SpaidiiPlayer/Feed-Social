@@ -1,7 +1,7 @@
 .wrapper {
     max-width: 70rem;
     margin: 2rem auto;
-    padding: 0 1rem;
+    padding: 0 0rem;
 
     display: grid;
     grid-template-columns: 256px 1fr;
@@ -9,4 +9,11 @@
     align-items: flex-start; 
     /*side bar alinhados pro topo*/
     
+}
+
+@media (max-width: 768px) {
+
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
 }
