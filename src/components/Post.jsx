@@ -18,9 +18,9 @@ export function Post(props) {
                 <time title='01 de Dezembro de 2023 às 12:13' dateTime="2023-12-01 12:13:30">Publicado há 1h</time>
             </header>
                 <div className={style.content}>
-                    <pre>
+                    <p>
                         {props.content}
-                    </pre>
+                    </p>
                 </div>
 
             <footer>
