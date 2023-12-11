@@ -21,6 +21,15 @@
     border: none;
     background: none;
     color: var(--white);
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 18px;
+
+    transition: background 0.3s;
+}
+
+.header button:hover{
+    color: var(--yellow);
 }
 
 .header img{

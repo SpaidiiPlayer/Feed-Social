@@ -1,8 +1,40 @@
 import style from './Post.module.css';
 import { Comment } from './Comment';
 import { Avatar } from './Avatar';
+import { useState } from 'react';
+
+import { format, formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
 
 export function Post(props) {
+    //Quantidade de comentários em tela
+    const [comments, setComments] = useState([
+        1,
+        2,
+    ])
+
+    //Formatação do dia e horario
+    const publishedDateFormatted = format(props.publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+        locale: ptBR,
+    })
+
+    //Formatação do dia tipo 'ha cerca de 3 horas'
+    const PublisedDateRelativeToNow = formatDistanceToNow(props.publishedAt, {
+        locale: ptBR,
+        addSuffix: true,
+    })
+
+    //Funcao que adiciona o novo comentário
+    function handleCreateNewComment(){
+        event.preventDefault()
+        console.log("oi")
+
+        setComments([...comments, comments.length + 1])
+
+        console.log(comments)
+    }
+
     return (
         <article className={style.post}>
             <header>
@@ -15,16 +47,20 @@ export function Post(props) {
                     </div>
                 </div>
 
-                <time title='01 de Dezembro de 2023 às 12:13' dateTime="2023-12-01 12:13:30">Publicado há 1h</time>
+                <time title={publishedDateFormatted} dateTime={props.publishedAt.toISOString()}>{PublisedDateRelativeToNow}</time>
             </header>
                 <div className={style.content}>
-                    <p>
-                        {props.content.content}
-                    </p>
+                        {props.content.map(line => {
+                            if(line.type === 'paragraph') {
+                                return <p>{line.content}</p>
+                            } else if(line.type === 'link'){
+                                return <p><a href={line.content}>{line.content}</a></p>
+                            }
+                        })}
                 </div>
 
             <footer>
-                <form className={style.commentForm}>
+                <form onSubmit={handleCreateNewComment} className={style.commentForm}>
                     <strong>Deixe seu feedback</strong>
                     <textarea  placeholder="Deixe seu comentário" />
 
@@ -36,12 +72,11 @@ export function Post(props) {
             </footer>
 
             <div className={style.commentList}>
-                <Comment comment = 'Show de bola'
-                         perfil = 'https://github.com/lukeeplr.png'/>
-                <Comment comment = 'Parabéns!'
-                         perfil = 'https://github.com/lukeeplr.png'/>
-                <Comment comment = 'Obrigado pela dica, vou começar a salvar os meus também! Um forte abraço!'
-                         perfil = 'https://github.com/lukeeplr.png'/>
+                {comments.map(comment => {
+                    return (<Comment comment = 'Show de bola'
+                        perfil = 'https://github.com/lukeeplr.png'/>
+                    )
+                })}
             </div>
         </article>
     )

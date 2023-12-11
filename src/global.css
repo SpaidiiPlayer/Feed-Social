@@ -1,5 +1,6 @@
 :root{
     --white: white;
+    --white-weak: rgba(255,255,255, 0.85);
     --gray-100: #e1e1e6;
     --gray-300: #c4c4cc;
     --gray-400: #8d8d99;
@@ -12,22 +13,31 @@
     --green-500: #00875f;
 
     --red-500: #F75A68;
+    
+    --yellow: yellow;
+
+    --black: black;
 }
 
 .light{
+    --white: black;
+    --white-weak: rgba(0,0,0, 0.7);
     --gray-100: #121214;
     --gray-300: #202024;
     --gray-400: #29292e;
     --gray-600: #323238;
-    --gray-700: #8d8d99;
-    --gray-800: #c4c4cc;
-    --gray-900: #e1e1e6;    /*Usado no background*/
+    --gray-700: #00ffff;
+    --gray-800: #89cff0;
+    --gray-900: #D4F0F7;    /*Usado no background*/
 
     --green-300: #00B37E;
     --green-500: #00875f;
 
     --red-500: #F75A68;
 
+    --yellow: yellow;
+
+    --black: white;
 }
 
 :focus{
