@@ -7,11 +7,11 @@ export function Post(props) {
         <article className={style.post}>
             <header>
                 <div className={style.author}>
-                    <Avatar border={true} perfil={props.perfil}/>
+                    <Avatar border={true} perfil={props.author.avatarUrl}/>
 
                     <div className={style.authorinfo}> 
-                        <strong>{props.author}</strong>
-                        <span>Web developer</span>
+                        <strong>{props.author.nome}</strong>
+                        <span>{props.author.role}</span>
                     </div>
                 </div>
 
@@ -19,7 +19,7 @@ export function Post(props) {
             </header>
                 <div className={style.content}>
                     <p>
-                        {props.content}
+                        {props.content.content}
                     </p>
                 </div>
 

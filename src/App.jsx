@@ -7,6 +7,42 @@ import { Sidebar } from './components/Sidebar';
 import styles from './App.module.css'
 import './global.css'
 
+const posts = [
+  {
+    id : 1,
+    author: {
+      avatarUrl : 'https://github.com/lukeeplr.png',
+      nome : 'Lucas',
+      role : 'Web Developer',
+    },
+
+    content: [
+      {type: 'paragraph', content: 'tirei foto de todos os trabalhos de complicadores pra caso ele perdesse eu ter como provar q fiz'},
+      {type: 'paragraph', content: 'e realmente conseguir provar\ncomo é bom estar preparado😃'},
+      {type: 'link', content: '#compiladores'},
+    ],
+    publishedAt: new Date('2023-12-10 22:32:02'),
+  },
+
+  {
+    id : 2,
+    author: {
+      avatarUrl : 'https://github.com/Luciano-Citroni.png',
+      nome : 'Luciano',
+      role : 'Web Developer',
+    },
+
+    content: [
+      {type: 'paragraph', content: 'Comecei a estudar inglês!'},
+      {type: 'paragraph', content: 'E realmente estou aprendendo, uhuuu!'},
+      {type: 'link', content: '#LearningEnglish'},
+    ],
+
+    publishedAt : new Date('2023-12-10 22:40:02'),
+
+  },
+
+];
 
 export function App() {
   return (
@@ -19,16 +55,15 @@ export function App() {
             perfil = "https://github.com/SpaidiiPlayer.png"
           />
           <main>
-            <Post 
-              perfil="https://github.com/lukeeplr.png"
-              author="Gabigol" 
-              content={`tirei foto de todos os trabalhos de complicadores pra caso ele perdesse eu ter como provar q fiz\ne realmente conseguir provar\ncomo é bom estar preparado😃`}
-            />
-            <Post 
-              perfil="https://github.com/Luciano-Citroni.png"
-              author="LulaNaro" 
-              content={`Queria agradecer a todos que mandaram mensagens.\nFiquei muito feliz no meu aniversário.\nValeu de coração ❤️`} 
-            />
+            {posts.map(post => {
+              return ( 
+                <Post 
+                  author = {post.author}
+                  content = {post.content}
+                  publishedAt = {post.publishedAt}
+                />
+              )
+            })}
           </main>
         </div>
           

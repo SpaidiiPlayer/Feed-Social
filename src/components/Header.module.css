@@ -1,11 +1,26 @@
 .header {
     background: var(--gray-800);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 1.25rem;
+    padding: 1.25rem 3.3vw;
     font-size: 1.1rem;
     gap: 1rem;
+}
+
+.header .Logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header button {
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--white);
 }
 
 .header img{
