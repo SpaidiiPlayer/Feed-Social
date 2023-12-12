@@ -10,9 +10,9 @@ import ptBR from 'date-fns/locale/pt-BR';
 export function Post(props) {
     //Quantidade de comentários em tela
     const [comments, setComments] = useState([
-        1,
-        2,
     ])
+
+    const [newCommentText, setNewCommentText] = useState('')
 
     //Formatação do dia e horario
     const publishedDateFormatted = format(props.publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
@@ -28,11 +28,23 @@ export function Post(props) {
     //Funcao que adiciona o novo comentário
     function handleCreateNewComment(){
         event.preventDefault()
-        console.log("oi")
 
-        setComments([...comments, comments.length + 1])
 
-        console.log(comments)
+        setComments([...comments, newCommentText])
+
+        setNewCommentText('')
+    }
+
+    function handleNewCommentChange(){
+        setNewCommentText(event.target.value)
+    }
+
+    function DeleteComment(commentToDelete){
+        const CommentListWithoutDeletedOne = comments.filter(comment => {
+            return comment !== commentToDelete;
+        })
+
+        setComments(CommentListWithoutDeletedOne);
     }
 
     return (
@@ -52,9 +64,9 @@ export function Post(props) {
                 <div className={style.content}>
                         {props.content.map(line => {
                             if(line.type === 'paragraph') {
-                                return <p>{line.content}</p>
+                                return <p key={line.content}>{line.content}</p>
                             } else if(line.type === 'link'){
-                                return <p><a href={line.content}>{line.content}</a></p>
+                                return <p key={line.content}><a href={line.content}>{line.content}</a></p>
                             }
                         })}
                 </div>
@@ -62,10 +74,10 @@ export function Post(props) {
             <footer>
                 <form onSubmit={handleCreateNewComment} className={style.commentForm}>
                     <strong>Deixe seu feedback</strong>
-                    <textarea  placeholder="Deixe seu comentário" />
+                    <textarea name='comment' value={newCommentText} placeholder="Deixe seu comentário" onChange={handleNewCommentChange}/>
 
                     <div className={style.botao}>
-                        <button type="submit">Comentar</button>
+                        <button type="submit" disabled={newCommentText.length === 0}>Comentar</button>
                     </div>
                     
                 </form>
@@ -73,8 +85,13 @@ export function Post(props) {
 
             <div className={style.commentList}>
                 {comments.map(comment => {
-                    return (<Comment comment = 'Show de bola'
-                        perfil = 'https://github.com/lukeeplr.png'/>
+                    return (
+                        <Comment 
+                        content = {comment}
+                        key = {comment}
+                        perfil = 'https://github.com/lukeeplr.png'
+                        DeleteComment = {DeleteComment}
+                        />
                     )
                 })}
             </div>

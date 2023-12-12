@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
 import logo from '../assets/Ignite-logo.svg'
-import { Lightbulb, Lightning } from 'phosphor-react'
+import { Lightning } from 'phosphor-react'
 
 
 export function Header(){
