@@ -3,8 +3,18 @@ import {Trash} from 'phosphor-react';
 import { ThumbsUp } from 'phosphor-react'
 import { Avatar } from './Avatar';
 import { useState } from 'react';
+import React from 'react';
 
-export function Comment({perfil, content, DeleteComment, user}) {
+import {formatDistanceToNow } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
+
+export function Comment({content, DeleteComment, user}) {
+
+    const dia1 = formatDistanceToNow(new Date(), {
+        locale: ptBR,
+        addSuffix: true,
+    })
+
 
     function HandleDeleteComment(){
         DeleteComment(content);
@@ -25,7 +35,7 @@ export function Comment({perfil, content, DeleteComment, user}) {
                 <header>
                     <div className={style.Title}>
                         <strong>{user.nome}</strong>
-                        <time>Cerca de 2h</time>
+                        <time>{dia1}</time>
                     </div>
 
                     <button onClick={HandleDeleteComment} title='Deletar comentário'>
