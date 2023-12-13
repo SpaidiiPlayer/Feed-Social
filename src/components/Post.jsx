@@ -89,7 +89,7 @@ export function Post(props) {
                         <Comment 
                         content = {comment}
                         key = {comment}
-                        perfil = 'https://github.com/lukeeplr.png'
+                        user = {props.user}
                         DeleteComment = {DeleteComment}
                         />
                     )

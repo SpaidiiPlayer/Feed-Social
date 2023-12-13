@@ -7,13 +7,19 @@ import { Sidebar } from './components/Sidebar';
 import styles from './App.module.css'
 import './global.css'
 
+const user = {
+  nome : 'Matheus Vinagre',
+  avatarUrl: 'https://github.com/SpaidiiPlayer.png',
+  role: 'Web Developer',
+}
+
 const posts = [
   {
     id : 1,
     author: {
       avatarUrl : 'https://github.com/lukeeplr.png',
       nome : 'Lucas',
-      role : 'Web Developer',
+      role : 'Analista de Dados',
     },
 
     content: [
@@ -29,13 +35,13 @@ const posts = [
     author: {
       avatarUrl : 'https://github.com/Luciano-Citroni.png',
       nome : 'Luciano',
-      role : 'Web Developer',
+      role : 'Professor de Inglês',
     },
 
     content: [
-      {type: 'paragraph', content: 'Comecei a estudar inglês!'},
+      {type: 'paragraph', content: 'Comecei a estudar espanhol!'},
       {type: 'paragraph', content: 'E realmente estou aprendendo, uhuuu!'},
-      {type: 'link', content: '#LearningEnglish'},
+      {type: 'link', content: '#LearningSpanish'},
     ],
 
     publishedAt : new Date('2023-12-8 22:40:02'),
@@ -50,9 +56,9 @@ export function App() {
         <Header />
         <div className={styles.wrapper}>
           <Sidebar 
-            name = "Matheus Vinagre"
-            occupation = "Web Developer"
-            perfil = "https://github.com/SpaidiiPlayer.png"
+            name = {user.nome}
+            occupation = {user.role}
+            perfil = {user.avatarUrl}
           />
           <main>
             {posts.map(post => {
@@ -62,6 +68,7 @@ export function App() {
                   author = {post.author}
                   content = {post.content}
                   publishedAt = {post.publishedAt}
+                  user = {user}
                 />
               )
             })}

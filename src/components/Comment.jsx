@@ -4,7 +4,7 @@ import { ThumbsUp } from 'phosphor-react'
 import { Avatar } from './Avatar';
 import { useState } from 'react';
 
-export function Comment({perfil, content, DeleteComment}) {
+export function Comment({perfil, content, DeleteComment, user}) {
 
     function HandleDeleteComment(){
         DeleteComment(content);
@@ -18,13 +18,13 @@ export function Comment({perfil, content, DeleteComment}) {
 
     return(
         <div className={style.comment}>
-            <Avatar border={false} perfil={perfil} />
+            <Avatar border={false} perfil={user.avatarUrl} />
             
             <div className={style.commentBox}>
                 <div className={style.commentContent}>
                 <header>
                     <div className={style.Title}>
-                        <strong>João gaming</strong>
+                        <strong>{user.nome}</strong>
                         <time>Cerca de 2h</time>
                     </div>
 
