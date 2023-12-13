@@ -4,8 +4,8 @@
 
 <p align="center">Nesse projeto teve o objetivo de simular o feed de uma rede social comum.</p>
 
-<h3>Tecnologias usadas<h2/>
+<h3>Tecnologias usadas<h3/>
 <ul>
-   <li>ReactJs</li>
-   <li>Figma</li>
+   <li><p> ReactJs <p/></li>
+   <li><p> Figma <p/></li>
 </ul>
