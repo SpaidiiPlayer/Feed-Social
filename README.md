@@ -3,3 +3,10 @@
 <h1 align="center">Projeto Feed</h1>
 
 <p align="center">Nesse projeto teve o objetivo de simular o feed de uma rede social comum.</p>
+
+<h2>Tecnologias usadas<h2/>
+<ul>
+   <li>React</li>
+   <li>Figma</li>
+</ul>
+
