@@ -2,6 +2,7 @@
 import { Post } from './components/Post';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
+import { useState } from 'react';
 
 
 import styles from './App.module.css'
@@ -50,7 +51,27 @@ const posts = [
 
 ];
 
+
 export function App() {
+
+  const [Publications, setPublications] = useState([
+  ])
+  
+
+  const [newPubText, setPubText] = useState('');
+
+  function handleNewPubChange(){
+    setPubText(event.target.value);
+  }
+
+  function handleCreatePub(){
+    event.preventDefault()
+
+    setPublications([newPubText, ...Publications])
+
+    setPubText('')
+}
+
   return (
       <>
         <Header />
@@ -61,17 +82,22 @@ export function App() {
             perfil = {user.avatarUrl}
           />
           <main>
-            {posts.map(post => {
-              return ( 
-                <Post 
-                  key={post.id}
-                  author = {post.author}
-                  content = {post.content}
-                  publishedAt = {post.publishedAt}
-                  user = {user}
-                />
-              )
-            })}
+            <div className={styles.NewPost}>
+              <strong>Faça uma nova publicação</strong>
+              <textarea name="newpost" value={newPubText} placeholder="Em que está pensando?" onChange={handleNewPubChange}></textarea>
+              <button type="submit" className={styles.pubButton} onClick={handleCreatePub} disabled={newPubText.length === 0}>Publicar</button>
+            </div>
+              { Publications.map(publication => {
+                return(
+                  <Post 
+                    author={user}
+                    user = {user}
+                    content={publication}
+                    key={publication}
+                    publishedAt = {new Date()}
+                  />
+                )
+              })}
           </main>
         </div>
           

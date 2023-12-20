@@ -107,6 +107,7 @@ article > header > time{
     line-height: 1.4;
     font-size: 0.875rem;
     color: var(--gray-300);
+    resize: none;
 }
 
 

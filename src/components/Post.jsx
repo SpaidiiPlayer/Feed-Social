@@ -62,6 +62,8 @@ export function Post(props) {
                 <time title={publishedDateFormatted} dateTime={props.publishedAt.toISOString()}>{PublisedDateRelativeToNow}</time>
             </header>
                 <div className={style.content}>
+                        {props.content}
+                        {/*
                         {props.content.map(line => {
                             if(line.type === 'paragraph') {
                                 return <p key={line.content}>{line.content}</p>
@@ -69,6 +71,7 @@ export function Post(props) {
                                 return <p key={line.content}><a href={line.content}>{line.content}</a></p>
                             }
                         })}
+                    */}
                 </div>
 
             <footer>

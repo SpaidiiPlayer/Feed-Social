@@ -11,6 +11,56 @@
     
 }
 
+.NewPost {
+    display: block;
+    background: var(--gray-800);
+    padding: 3rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.NewPost textarea{
+    display: block;
+    background: var(--gray-900);
+    width: 100%;
+    height: 7.1rem;
+    color: var(--gray-300);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1.1rem;
+    resize: none;
+}
+
+.NewPost .pubButton{
+    border: none;
+    background: var(--green-500);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--white);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-weight: 700;
+
+    transition: all 0.3s;
+}
+
+.NewPost .pubButton::not(:disabled):hover{
+    background: var(--green-300);
+}
+
+.NewPost button:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.NewPost > strong{
+    padding-left: 0.1rem;
+    display: block;
+    margin-bottom: 0.875rem;
+}
+
+
+/* -- TRATAMENTO DE WIDTH -- */
 @media (max-width: 768px) {
 
     .wrapper {
